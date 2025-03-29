@@ -1,10 +1,10 @@
 {
-    "taskDefinition": "ecs-lab:1",
-    "cluster": "ecs-cluster",
+    "taskDefinition": "ecs-lab:5",
+    "cluster": "fargate_cluster",
     "loadBalancers": [
         {
-            "targetGroupArn": "TARGET-GROUP-ARN",
-            "containerName": "sample-website",
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:277429565244:targetgroup/target-group-1/89b02cf43516638b",
+            "containerName": "mycontainer-website",
             "containerPort": 80
         }
     ],
@@ -17,11 +17,11 @@
     "networkConfiguration": {
         "awsvpcConfiguration": {
             "subnets": [
-                "SUBNET-ID",
-                "SUBNET-ID"
+                "subnet-077798deaa91c6c16",
+                "subnet-030a7e02e12fdc1d1"
             ],
             "securityGroups": [
-                "SECURITY-GROUP-ID"
+                "sg-084dfd2b6f176d0ea"
             ],
             "assignPublicIp": "ENABLED"
         }
