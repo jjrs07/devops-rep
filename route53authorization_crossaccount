@@ -1,0 +1,16 @@
+--List the available hosted zones
+aws route53 list-hosted-zones
+
+--List associated vpc
+aws route53 list-vpc-association-authorizations --hosted-zone-id Z0025048101371DL4BUG7
+
+--Run this on Account A
+aws route53 create-vpc-association-authorization --hosted-zone-id Z0025048101371DL4BUG7 --vpc VPCRegion=us-east-1,VPCId=vpc-0818dff93f20f69a9 --region us-east-1
+
+--Run this on Account B
+aws route53 associate-vpc-with-hosted-zone --hosted-zone-id Z0025048101371DL4BUG7 --vpc VPCRegion=us-east-1,VPCId=vpc-0818dff93f20f69a9 --region us-east-1
+
+--Delete the association after the association is created run this on account A
+aws route53 delete-vpc-association-authorization --hosted-zone-id Z0025048101371DL4BUG7 --vpc VPCRegion=us-east-1,VPCId=vpc-0818dff93f20f69a9 --region us-east-
+
+aws route53 delete-vpc-association-authorization --hosted-zone-id Z0025048101371DL4BUG7 --vpc VPCRegion=us-east-1,VPCId=vpc-0818dff93f20f69a9 --region us-east-1
