@@ -1,10 +1,10 @@
 {
-    "taskDefinition": "ecs-lab:5",
-    "cluster": "fargate_cluster",
+    "taskDefinition": "ecs-lab",
+    "cluster": "ecs-cluster",
     "loadBalancers": [
         {
             "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:277429565244:targetgroup/target-group-1/89b02cf43516638b",
-            "containerName": "mycontainer-website",
+            "containerName": "sample-website",
             "containerPort": 80
         }
     ],
